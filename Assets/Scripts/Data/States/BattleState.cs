@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu]
-public class Team : ScriptableObject
+public class BattleState : State
 {
-    public int id;
-    public Color color;
+    
 }

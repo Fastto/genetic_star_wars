@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu]
-public class Team : ScriptableObject
+public class FollowToStationState : FollowToState
 {
-    public int id;
-    public Color color;
+   
 }

@@ -191,7 +191,7 @@ Transform:
   m_GameObject: {fileID: 5154936555340851924}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children:
   - {fileID: 2727360382847945401}
   - {fileID: 1352374155770798358}
@@ -210,6 +210,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fab3120e73df48d1bf906881ceacd94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resourcesManager: {fileID: 0}
+  team: {fileID: 0}
+  shipPrefab: {fileID: 0}
+  shipInitialGenome: {fileID: 0}
+  initialGold: 20
+  shipCost: 10
 --- !u!58 &3485405229678682092
 CircleCollider2D:
   m_ObjectHideFlags: 0

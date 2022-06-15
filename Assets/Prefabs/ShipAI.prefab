@@ -74,3 +74,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd7b1332f13914d8c845224c64d8950a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  idleState: {fileID: 11400000, guid: efe901c846437462ebf68aeed3e480bd, type: 2}
+  battleState: {fileID: 11400000, guid: a838dc0f8cca74612a803cc9379930c5, type: 2}
+  miningState: {fileID: 11400000, guid: 1a3c0cc62161747d6bf25fde722afdad, type: 2}
+  unloadingState: {fileID: 11400000, guid: f3051c7d860df4bd59d75fa49bd4e734, type: 2}
+  followToBusyGoldState: {fileID: 11400000, guid: 46f5ca5d48c1b49a59beb7ac18367329, type: 2}
+  followToFreeGoldState: {fileID: 11400000, guid: 712e0e3820a054e029eead97f84c3584, type: 2}
+  followToEnemyState: {fileID: 11400000, guid: 9f82e06dd318840b09e78afaf62bbf42, type: 2}
+  followToStationState: {fileID: 11400000, guid: ddef54b9fc5db417b8a3ebe43296dc39, type: 2}

@@ -1,0 +1,53 @@
+- Station produces the ship
+- Ship follows to free gold if is empty
+- Ship follows to station if has gold on board
+- SHip attacks enemy
+- Ship put gold on map if dies
+- Ship follows to busy gold by enemy
+- Ship follows to enemy if there is no gold
+- minipart of gold from killeld ships is visible for alive ships
+- station is rotating
+- space is rotations
+- gold is animated
+- gun particles
+- ship engine particles
+- genome manages ship characteristics visual and as fact values
+- ship collects statistics of 
+-- total collected gold
+-- total damage
+- station repair the ship? for gold
+- animation of mining
+- animation of unloading gold
+- animation of repairing
+- Idle state - ??? ship flies to station or by random trajectory
+- gold showes amount, size of gold depends on amount
+- flag - unlimited gold
+- ship shows HEALTHBAR: lives, fire cooldown, % of gold in holds
+- station shows statistics:
+--- produced ships
+--- alive ships
+--- killed enemies
+--- available gold
+--- received gold
+- station has strategy which genome to use for new ship
+- UI toolbox for genome statistics
+--- team stats
+--- genomes on the screen
+--- top 10 genomes as unactive sliders and its results
+------ quantity of ships
+------ avg damage
+------ avg gold
+------ avg scores
+------ avg lifetime
+- genome stat = 20 x 20
+
+- at leas 1 point of damage
+- at leas 1 point of armor
+- at least 1 point of hold
+
+genome value 
+0.05 - 0.95, step 0.05
+
+
+
+

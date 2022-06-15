@@ -216,6 +216,7 @@ MonoBehaviour:
   shipInitialGenome: {fileID: 0}
   initialGold: 20
   shipCost: 10
+  shipBuildingTime: 5
 --- !u!58 &3485405229678682092
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -43,35 +43,43 @@ public class ShipStateController : MonoBehaviour
 
     private State DetermineState()
     {
-        if (_ship.Hold == 0 && !IsConnectedToGold && _ship.Station.ResourcesManager.HasFree)
+        State state = idleState;
+        
+        if (_ship.Hold == 0 
+            && !_ship.IsConnectedToGold 
+            && _ship.Station.ResourcesManager.HasFree())
         {
-            return followToFreeGoldState;
+            state = followToFreeGoldState;
         } 
-        else if (_ship.Hold == 0 && !IsConnectedToGold &&  _ship.Station.ResourcesManager.HasCapturedByEnemy)
+        else if (_ship.Hold == 0 
+                 && !_ship.IsConnectedToGold 
+                 &&  _ship.Station.ResourcesManager.HasCapturedByEnemy(_ship.Team))
         {
-            return followToBusyGoldState;
+            state = followToBusyGoldState;
         } 
-        else if (_ship.Hold == 0 && !IsConnectedToGold &&  !_ship.Station.ResourcesManager.HasCapturedByEnemy)
+        else if (_ship.Hold == 0 
+                 && !_ship.IsConnectedToGold 
+                 &&  !_ship.Station.ResourcesManager.HasCapturedByEnemy(_ship.Team))
         {
-            return followToEnemyState;
+            state = followToEnemyState;
         } 
-        else if (_ship.Hold == 0 && IsConnectedToGold)
+        else if (_ship.Hold == 0 && _ship.IsConnectedToGold)
         {
-            return miningState;
+            state = miningState;
         }
-        else if (_ship.Hold > 0 && !IsConnectedToStation)
+        else if (_ship.Hold > 0 && !_ship.IsConnectedToStation)
         {
-            return followToStationState;
+            state = followToStationState;
         }
-        else if (_ship.Hold > 0 && IsConnectedToStation)
+        else if (_ship.Hold > 0 && _ship.IsConnectedToStation)
         {
-            return unloadingState;
+            state = unloadingState;
         } 
-        else if (IsConnectedToEnemy)
+        else if (_ship.IsConnectedToEnemy)
         {
-            return battleState;
+            state = battleState;
         }
 
-        return idleState;
+        return state;
     }
 }

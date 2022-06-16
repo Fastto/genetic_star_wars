@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class StationController : MonoBehaviour
 {
-   [SerializeField] private ResourcesManager resourcesManager;
+   [SerializeField] public ResourcesManager ResourcesManager;
    [SerializeField] private Team team;
 
    [SerializeField] private GameObject shipPrefab;
@@ -47,6 +47,10 @@ public class StationController : MonoBehaviour
 
    private void BuildTheShip()
    {
-      
+      GameObject shipGO = Instantiate(shipPrefab, transform.position, Quaternion.identity);
+      ShipController shipController = shipGO.GetComponent<ShipController>();
+      shipController.Station = this;
+      shipController.Team = team;
+      shipController.Genome = shipInitialGenome;
    }
 }

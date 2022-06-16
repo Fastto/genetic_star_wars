@@ -20,6 +20,7 @@ public class ShipStateController : MonoBehaviour
     private void Start()
     {
         _ship = GetComponent<ShipController>();
+        SetState(DetermineState());
     }
 
     private void Update()
@@ -42,6 +43,35 @@ public class ShipStateController : MonoBehaviour
 
     private State DetermineState()
     {
+        if (_ship.Hold == 0 && !IsConnectedToGold && _ship.Station.ResourcesManager.HasFree)
+        {
+            return followToFreeGoldState;
+        } 
+        else if (_ship.Hold == 0 && !IsConnectedToGold &&  _ship.Station.ResourcesManager.HasCapturedByEnemy)
+        {
+            return followToBusyGoldState;
+        } 
+        else if (_ship.Hold == 0 && !IsConnectedToGold &&  !_ship.Station.ResourcesManager.HasCapturedByEnemy)
+        {
+            return followToEnemyState;
+        } 
+        else if (_ship.Hold == 0 && IsConnectedToGold)
+        {
+            return miningState;
+        }
+        else if (_ship.Hold > 0 && !IsConnectedToStation)
+        {
+            return followToStationState;
+        }
+        else if (_ship.Hold > 0 && IsConnectedToStation)
+        {
+            return unloadingState;
+        } 
+        else if (IsConnectedToEnemy)
+        {
+            return battleState;
+        }
+
         return idleState;
     }
 }

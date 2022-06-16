@@ -296,6 +296,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27ee060e374424ed8a69106438bca327, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shipBodySpriteRenderer: {fileID: 1416222322853953218}
+  Station: {fileID: 0}
+  Genome: {fileID: 0}
+  Team: {fileID: 0}
 --- !u!1001 &1070519833060966519
 PrefabInstance:
   m_ObjectHideFlags: 0

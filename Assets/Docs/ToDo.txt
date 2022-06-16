@@ -1,4 +1,7 @@
+DONE:
 - Station produces the ship
+
+TODO:
 - Ship follows to free gold if is empty
 - Ship follows to station if has gold on board
 - SHip attacks enemy

@@ -9,6 +9,8 @@ public class GoldController : MonoBehaviour
     private int _amount;
 
     public Action<GoldController> OnOver;
+    public Action<GoldController> OnConnect;
+    public Action<GoldController> OnDisconnect;
     
     public bool IsFree { get; private set; } = true;
     public ShipController ConnectedShip { get; private set; }
@@ -26,6 +28,7 @@ public class GoldController : MonoBehaviour
             IsFree = false;
             ConnectedShip = shipController;
             success = true;
+            OnConnect?.Invoke(this);
         }
 
         return success;
@@ -37,6 +40,7 @@ public class GoldController : MonoBehaviour
         {
             IsFree = true;
             ConnectedShip = null;
+            OnDisconnect?.Invoke(this);
         }
     }
 

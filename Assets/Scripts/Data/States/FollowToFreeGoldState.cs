@@ -5,5 +5,48 @@ using UnityEngine;
 [CreateAssetMenu]
 public class FollowToFreeGoldState : FollowToState
 {
-   
+    protected GoldController _target;
+    
+    protected override void Init()
+    {
+        var list = _ship.Station.ResourcesManager.GetFree();
+
+        if (list.Count > 0)
+        {
+            float distance = (list[0].transform.position - _ship.transform.position).magnitude;
+            GoldController target = list[0];
+            
+            list.ForEach(item =>
+            {
+                float distanceToItem = (item.transform.position - _ship.transform.position).magnitude;
+                if (distanceToItem < distance)
+                {
+                    distance = distanceToItem;
+                    target = item;
+                }
+            });
+
+            _target = target;
+            _target.OnConnect += OnGoldConnectHandler;
+        }
+        else
+        {
+            Finish();
+        }
+    }
+    
+    protected override void Run()
+    {
+        Vector3 direction = (_target.transform.position - _ship.transform.position).normalized;
+        _ship.rigidbody.MovePosition(_ship.transform.position + direction * Time.deltaTime);
+        
+        //TODO: _ship.rigidbody.MoveRotation();
+        _ship.transform.up = Vector3.Lerp(_ship.transform.up, direction, .25f);
+    }
+
+    protected void OnGoldConnectHandler(GoldController goldController)
+    {
+        goldController.OnConnect -= OnGoldConnectHandler;
+        Finish();
+    }
 }

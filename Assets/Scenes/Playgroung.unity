@@ -621,6 +621,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7284093781840468641, guid: 56350737444af4fab9488733c0c40478, type: 3}
     - target: {fileID: 2292839341015992031, guid: d29702461c8d147d4a50a863b3cca696, type: 3}
+      propertyPath: ResourcesManager
+      value: 
+      objectReference: {fileID: 1265170232212111726}
+    - target: {fileID: 2292839341015992031, guid: d29702461c8d147d4a50a863b3cca696, type: 3}
       propertyPath: resourcesManager
       value: 
       objectReference: {fileID: 1265170232212111726}
@@ -875,6 +879,10 @@ PrefabInstance:
       propertyPath: shipPrefab
       value: 
       objectReference: {fileID: 7284093781840468641, guid: 56350737444af4fab9488733c0c40478, type: 3}
+    - target: {fileID: 2292839341015992031, guid: d29702461c8d147d4a50a863b3cca696, type: 3}
+      propertyPath: ResourcesManager
+      value: 
+      objectReference: {fileID: 1265170232212111726}
     - target: {fileID: 2292839341015992031, guid: d29702461c8d147d4a50a863b3cca696, type: 3}
       propertyPath: resourcesManager
       value: 

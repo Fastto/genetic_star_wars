@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class ShipController : MonoBehaviour
 {
+    [SerializeField] public Rigidbody2D rigidbody;
     [SerializeField] private SpriteRenderer shipBodySpriteRenderer;
     
     [HideInInspector] public StationController Station;

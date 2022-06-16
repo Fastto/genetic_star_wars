@@ -32,7 +32,6 @@ public abstract class State : ScriptableObject
          Run();
       else
       {
-         IsFinished = true;
          Finish();
       }
    }
@@ -44,6 +43,6 @@ public abstract class State : ScriptableObject
    
    protected virtual void Finish()
    {
-      
+      IsFinished = true;
    }
 }

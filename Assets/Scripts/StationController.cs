@@ -53,4 +53,9 @@ public class StationController : MonoBehaviour
       shipController.Team = team;
       shipController.Genome = shipInitialGenome;
    }
+
+   public void PutGold(int amount)
+   {
+      _gold += amount;
+   }
 }

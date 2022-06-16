@@ -38,10 +38,7 @@ public class FollowToFreeGoldState : FollowToState
     protected override void Run()
     {
         Vector3 direction = (_target.transform.position - _ship.transform.position).normalized;
-        _ship.rigidbody.MovePosition(_ship.transform.position + direction * Time.deltaTime);
-        
-        //TODO: _ship.rigidbody.MoveRotation();
-        _ship.transform.up = Vector3.Lerp(_ship.transform.up, direction, .25f);
+        Move(direction);
     }
 
     protected void OnGoldConnectHandler(GoldController goldController)

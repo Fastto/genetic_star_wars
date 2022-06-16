@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Collections;
 using UnityEngine;
 
 public class ShipController : MonoBehaviour
@@ -13,9 +14,9 @@ public class ShipController : MonoBehaviour
     [HideInInspector] public Team Team;
     
     //Genome managed properties
-    public int Capacity { get; protected set; }
-    public int Health { get; protected set; }
-    public int Damage { get; protected set; }
+    public int Capacity;
+    public int Health;
+    public int Damage;
     
     //Predefined properties
     public float ShootCoolDown;
@@ -23,10 +24,12 @@ public class ShipController : MonoBehaviour
     public float MiningCoolDown;
     public int UnloadingRate;
     public float UnloadingCoolDown;
+    public float RotationSpeed;
+    public float Speed;
     
     //Other properties
-    [HideInInspector] public int Hold;
-    [HideInInspector] public int Lives;
+    public int Hold;
+    public int Lives;
     [HideInInspector] public bool IsConnectedToGold { get; private set; }
     [HideInInspector] public bool IsConnectedToStation { get; private set; }
     [HideInInspector] public bool IsConnectedToEnemy { get; private set; }
@@ -103,6 +106,10 @@ public class ShipController : MonoBehaviour
             && goldController.IsFree)
         {
             ConnectToGold(goldController);
+        } 
+        else if (!IsConnectedToStation && other.TryGetComponent(out StationController stationController))
+        {
+            ConnectToStation(stationController);
         }
     }
     
@@ -113,6 +120,10 @@ public class ShipController : MonoBehaviour
             && goldController == ConnectedGold)
         {
             DisconnectFromGold(goldController);
+        }
+        else if (IsConnectedToStation && other.TryGetComponent(out StationController stationController))
+        {
+            DisconnectFromStation(stationController);
         }
     }
 

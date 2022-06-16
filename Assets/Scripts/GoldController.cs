@@ -6,7 +6,7 @@ using UnityEngine;
 public class GoldController : MonoBehaviour
 {
     [SerializeField] private int initialAmount;
-    private int _amount;
+    public int _amount;
 
     public Action<GoldController> OnOver;
     public Action<GoldController> OnConnect;
@@ -56,6 +56,6 @@ public class GoldController : MonoBehaviour
             quantity = _amount;
 
         _amount -= quantity;
-        return _amount;
+        return quantity;
     }
 }

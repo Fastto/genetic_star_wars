@@ -303,11 +303,13 @@ MonoBehaviour:
   Station: {fileID: 0}
   Genome: {fileID: 0}
   Team: {fileID: 0}
-  ShootCoolDown: 0
-  MiningRate: 0
-  MiningCoolDown: 0
-  UnloadingRate: 0
-  UnloadingCoolDown: 0
+  ShootCoolDown: 1
+  MiningRate: 1
+  MiningCoolDown: 0.5
+  UnloadingRate: 1
+  UnloadingCoolDown: 0.25
+  RotationSpeed: 0.25
+  Speed: 1
   Hold: 0
   Lives: 0
 --- !u!50 &5242310617335930360

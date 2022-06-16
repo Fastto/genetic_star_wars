@@ -1,9 +1,11 @@
 DONE:
 - Station produces the ship
+- Ship follows to free gold if is empty
+- Ship mining
+- Ship follows to station if has gold on board
+- Ship Unloading
 
 TODO:
-- Ship follows to free gold if is empty
-- Ship follows to station if has gold on board
 - SHip attacks enemy
 - Ship put gold on map if dies
 - Ship follows to busy gold by enemy

@@ -20,6 +20,15 @@ public class GoldController : MonoBehaviour
         _amount = initialAmount;
     }
 
+    private void Update()
+    {
+        if (_amount <= 0)
+        {
+            OnOver?.Invoke(this);
+            Destroy(this.gameObject);
+        }
+    }
+
     public bool TryToConnect(ShipController shipController)
     {
         bool success = false;
@@ -46,12 +55,6 @@ public class GoldController : MonoBehaviour
 
     public int GetGold(int quantity)
     {
-        if (_amount == 0)
-        {
-            OnOver?.Invoke(this);
-            Destroy(this.gameObject);
-        }
-        
         if (quantity > _amount)
             quantity = _amount;
 

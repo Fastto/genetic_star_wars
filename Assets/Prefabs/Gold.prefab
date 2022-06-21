@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5685194716154979581}
   - component: {fileID: 4696323062481211889}
   - component: {fileID: 1287149522768572129}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Gold
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialAmount: 100
+  _amount: 0
 --- !u!58 &1287149522768572129
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -72,7 +73,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2969130964481491712}
   - component: {fileID: 8187553720630936018}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GoldSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -20,7 +20,15 @@ public class ShipStateController : MonoBehaviour
     private void Start()
     {
         _ship = GetComponent<ShipController>();
+
+        _ship.OnEnemyConnect += OnEnemyConnectHandler;
+        
         SetState(DetermineState());
+    }
+
+    private void OnEnemyConnectHandler(ShipController shipController)
+    {
+        _state.Finish();
     }
 
     private void Update()
@@ -46,39 +54,35 @@ public class ShipStateController : MonoBehaviour
     {
         State state = idleState;
         
-        if (_ship.Hold == 0 
-            && !_ship.IsConnectedToGold 
-            && _ship.Station.ResourcesManager.HasFree())
+        if (_ship.IsConnectedToEnemy)
         {
-            state = followToFreeGoldState;
-        } 
-        else if (_ship.Hold == 0 
-                 && !_ship.IsConnectedToGold 
-                 &&  _ship.Station.ResourcesManager.HasCapturedByEnemy(_ship.Team))
-        {
-            state = followToBusyGoldState;
-        } 
-        else if (_ship.Hold == 0 
-                 && !_ship.IsConnectedToGold 
-                 &&  !_ship.Station.ResourcesManager.HasCapturedByEnemy(_ship.Team))
-        {
-            state = followToEnemyState;
+            state = battleState;
         } 
         else if (_ship.Hold == 0 && _ship.IsConnectedToGold)
         {
             state = miningState;
         }
+        else if (_ship.Hold > 0 && _ship.IsConnectedToStation)
+        {
+            state = unloadingState;
+        }
         else if (_ship.Hold > 0 && !_ship.IsConnectedToStation)
         {
             state = followToStationState;
         }
-        else if (_ship.Hold > 0 && _ship.IsConnectedToStation)
+        else if (_ship.Hold == 0
+                 && _ship.Station.ResourcesManager.HasFree())
         {
-            state = unloadingState;
+            state = followToFreeGoldState;
         } 
-        else if (_ship.IsConnectedToEnemy)
+        else if (_ship.Hold == 0
+                 &&  _ship.Station.ResourcesManager.HasCapturedByEnemy(_ship.Team))
         {
-            state = battleState;
+            state = followToBusyGoldState;
+        } 
+        else if (_ship.Hold == 0)
+        {
+            state = followToEnemyState;
         }
 
         return state;

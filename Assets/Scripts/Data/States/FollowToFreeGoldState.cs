@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu]
-public class FollowToFreeGoldState : FollowToState
+public class FollowToFreeGoldState : State
 {
     protected GoldController _target;
     
@@ -38,7 +38,8 @@ public class FollowToFreeGoldState : FollowToState
     protected override void Run()
     {
         Vector3 direction = (_target.transform.position - _ship.transform.position).normalized;
-        Move(direction);
+        _ship.Move(direction);
+        _ship.Rotate(direction);
     }
 
     protected void OnGoldConnectHandler(GoldController goldController)

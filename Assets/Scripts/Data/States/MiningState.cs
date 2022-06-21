@@ -38,6 +38,12 @@ public class MiningState : State
         
         Finish();
     }
+    
+    protected override void Run()
+    {
+        Vector3 direction = (_gold.transform.position - _ship.transform.position).normalized;
+        _ship.Rotate(direction);
+    }
 
     private void OnGoldDisconnectHandler(GoldController goldController)
     {

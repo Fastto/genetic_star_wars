@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu]
-public class FollowToEnemyState : FollowToState
+public class FollowToEnemyState : State
 {
     
 }

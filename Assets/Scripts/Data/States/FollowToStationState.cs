@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu]
-public class FollowToStationState : FollowToState
+public class FollowToStationState : State
 {
     protected StationController _target;
     
@@ -22,7 +22,8 @@ public class FollowToStationState : FollowToState
     protected override void Run()
     {
         Vector3 direction = (_target.transform.position - _ship.transform.position).normalized;
-        Move(direction);
+        _ship.Move(direction);
+        _ship.Rotate(direction);
     }
     
     protected override bool ConditionToFinish()

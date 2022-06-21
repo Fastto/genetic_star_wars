@@ -41,7 +41,7 @@ public abstract class State : ScriptableObject
       
    }
    
-   protected virtual void Finish()
+   public virtual void Finish()
    {
       IsFinished = true;
    }

@@ -36,12 +36,26 @@ public class ShipController : MonoBehaviour
     [HideInInspector] public ShipController ConnectedEnemy { get; private set; }
     [HideInInspector] public GoldController ConnectedGold { get; private set; }
     [HideInInspector] public StationController ConnectedStation { get; private set; }
-    
+
+    public Action<ShipController> OnDie;
+    public Action<ShipController> OnEnemyConnect;
+    public Action<ShipController> OnEnemyDisconnect;
     
     private void Start()
     {
         SetColor(Team.color);
         ApplyGenome();
+
+        Lives = Health;
+    }
+
+    private void Update()
+    {
+        if (Lives <= 0)
+        {
+            OnDie?.Invoke(this);
+            Destroy(gameObject);
+        }
     }
 
     public void SetColor(Color color)
@@ -90,12 +104,18 @@ public class ShipController : MonoBehaviour
     {
         IsConnectedToEnemy = true;
         ConnectedEnemy = shipController;
+        shipController.OnDie += OnEnemyDieHandler;
+
+        OnEnemyConnect?.Invoke(shipController);
     }
 
     private void DisconnectFromEnemy(ShipController shipController)
     {
+        shipController.OnDie -= OnEnemyDieHandler;
         IsConnectedToEnemy = false;
         ConnectedEnemy = null;
+        
+        OnEnemyDisconnect?.Invoke(shipController);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -111,6 +131,12 @@ public class ShipController : MonoBehaviour
         {
             ConnectToStation(stationController);
         }
+        else if (!IsConnectedToEnemy 
+                 && other.TryGetComponent(out ShipController shipController)
+                 && shipController.Team != Team)
+        {
+            ConnectToEnemy(shipController);
+        }
     }
     
     private void OnTriggerExit2D(Collider2D other)
@@ -125,10 +151,43 @@ public class ShipController : MonoBehaviour
         {
             DisconnectFromStation(stationController);
         }
+        else if (IsConnectedToEnemy 
+                 && other.TryGetComponent(out ShipController shipController)
+                 && ConnectedEnemy == shipController)
+        {
+            DisconnectFromEnemy(shipController);
+        }
     }
 
     private void OnGoldOverHandler(GoldController goldController)
     {
         DisconnectFromGold(goldController);
     }
+    
+    private void OnEnemyDieHandler(ShipController shipController)
+    {
+        DisconnectFromEnemy(shipController);
+    }
+
+    public int MakeDamage(int damage)
+    {
+        if (damage > Lives)
+            damage = Lives;
+
+        Lives -= damage;
+
+        return damage;
+    }
+    
+    public void Move(Vector3 direction)
+    {
+        rigidbody.MovePosition(transform.position + direction * (Time.deltaTime * Speed));
+    } 
+    
+    public void Rotate(Vector3 direction)
+    {
+        //TODO: _ship.rigidbody.MoveRotation();
+        transform.up = Vector3.Lerp(transform.up, direction, RotationSpeed);
+    }
+    
 }

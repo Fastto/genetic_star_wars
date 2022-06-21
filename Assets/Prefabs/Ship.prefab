@@ -1,5 +1,52 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1234202790702438176
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2174303412501644427}
+  - component: {fileID: 8653079598451666813}
+  m_Layer: 9
+  m_Name: WeaponCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2174303412501644427
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1234202790702438176}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3301900180885902230}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &8653079598451666813
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1234202790702438176}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.5
 --- !u!1 &1976525224118176318
 GameObject:
   m_ObjectHideFlags: 0
@@ -10,7 +57,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1866405423064277342}
   - component: {fileID: 1416222322853953218}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ShipBaseSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +139,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3473817466449906629}
   - component: {fileID: 6026912032741450252}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ShipArmorSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -174,7 +221,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6655040433311188836}
   - component: {fileID: 5547607711448080264}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ship2ndLayerSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -258,9 +305,9 @@ GameObject:
   - component: {fileID: -2274957813968818623}
   - component: {fileID: 5242310617335930360}
   - component: {fileID: 5727231132332883706}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ship
-  m_TagString: Untagged
+  m_TagString: Ship
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -283,6 +330,7 @@ Transform:
   - {fileID: 2149138056251619260}
   - {fileID: 6359341142905319271}
   - {fileID: 3473817466449906629}
+  - {fileID: 2174303412501644427}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -303,6 +351,9 @@ MonoBehaviour:
   Station: {fileID: 0}
   Genome: {fileID: 0}
   Team: {fileID: 0}
+  Capacity: 0
+  Health: 0
+  Damage: 0
   ShootCoolDown: 1
   MiningRate: 1
   MiningCoolDown: 0.5
@@ -343,7 +394,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -403,6 +454,10 @@ PrefabInstance:
     - target: {fileID: 8487707239550938716, guid: 554d7447a141e4c0981f540e237b4463, type: 3}
       propertyPath: m_Name
       value: ShipLeftHold
+      objectReference: {fileID: 0}
+    - target: {fileID: 8487707239550938716, guid: 554d7447a141e4c0981f540e237b4463, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 554d7447a141e4c0981f540e237b4463, type: 3}
@@ -466,6 +521,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShipRightHold
       objectReference: {fileID: 0}
+    - target: {fileID: 8487707239550938716, guid: 554d7447a141e4c0981f540e237b4463, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 554d7447a141e4c0981f540e237b4463, type: 3}
 --- !u!4 &6359341142905319271 stripped
@@ -483,6 +542,10 @@ PrefabInstance:
     - target: {fileID: 544423722900678806, guid: 592bc0be315304a8ab49d79874a47f97, type: 3}
       propertyPath: m_Name
       value: ShipRightGun
+      objectReference: {fileID: 0}
+    - target: {fileID: 544423722900678806, guid: 592bc0be315304a8ab49d79874a47f97, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2149434583249678783, guid: 592bc0be315304a8ab49d79874a47f97, type: 3}
       propertyPath: m_RootOrder
@@ -545,6 +608,10 @@ PrefabInstance:
     - target: {fileID: 544423722900678806, guid: 592bc0be315304a8ab49d79874a47f97, type: 3}
       propertyPath: m_Name
       value: ShipLeftGun
+      objectReference: {fileID: 0}
+    - target: {fileID: 544423722900678806, guid: 592bc0be315304a8ab49d79874a47f97, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2149434583249678783, guid: 592bc0be315304a8ab49d79874a47f97, type: 3}
       propertyPath: m_RootOrder

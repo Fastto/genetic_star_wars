@@ -39,4 +39,9 @@ public class UnloadingState : State
         Finish();
     }
     
+    protected override void Run()
+    {
+        Vector3 direction = (_station.transform.position - _ship.transform.position).normalized;
+        _ship.Rotate(direction);
+    }
 }

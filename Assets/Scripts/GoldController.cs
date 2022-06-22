@@ -6,7 +6,30 @@ using UnityEngine;
 public class GoldController : MonoBehaviour
 {
     [SerializeField] private int initialAmount;
-    public int _amount;
+
+    private int _amount;
+    
+    public int Amount
+    {
+        get
+        {
+            return _amount;
+        }
+        set
+        {
+            _amount = value;
+            if (value > 0)
+            {
+                float a = value / 30f;
+                a = a == 0 ? 1 : a;
+                float scale = Mathf.Sqrt(a / Mathf.PI);
+                scale = scale > 1 ? 1 : scale;
+                scale = scale < 0.2f ? .2f : scale;
+
+                transform.localScale = new Vector3(scale, scale, 1);
+            }
+        }
+    }
 
     public Action<GoldController> OnOver;
     public Action<GoldController> OnConnect;
@@ -17,12 +40,12 @@ public class GoldController : MonoBehaviour
 
     private void Start()
     {
-        _amount = initialAmount;
+        Amount = initialAmount;
     }
 
     private void Update()
     {
-        if (_amount <= 0)
+        if (Amount <= 0)
         {
             OnOver?.Invoke(this);
             Destroy(this.gameObject);
@@ -55,10 +78,10 @@ public class GoldController : MonoBehaviour
 
     public int GetGold(int quantity)
     {
-        if (quantity > _amount)
-            quantity = _amount;
+        if (quantity > Amount)
+            quantity = Amount;
 
-        _amount -= quantity;
+        Amount -= quantity;
         return quantity;
     }
 

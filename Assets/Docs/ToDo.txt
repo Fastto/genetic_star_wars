@@ -10,12 +10,13 @@ DONE:
 - minipart of gold from killeld ships is visible for alive ships
 - Ship follows to busy gold by enemy
 - Ship follows to enemy if there is no gold
+- gold size corresponds to amount
 
 In Progress:
 
+
 TODO:
 - ship rotates around with stable angle speed
-- gold size corresponds to amount
 - station is rotating
 - space is rotations
 - gold is animated

@@ -70,7 +70,7 @@ public class ShipStateController : MonoBehaviour
         {
             state = followToStationState; //done
         }
-        else if (_ship.Hold == 0
+        else if (_ship.Hold < _ship.Capacity
                  && _ship.Station.ResourcesManager.HasFree())
         {
             state = followToFreeGoldState; //done

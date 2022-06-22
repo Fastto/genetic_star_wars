@@ -6,15 +6,16 @@ DONE:
 - Ship Unloading
 - SHip attacks enemy
 - rotate to target in any state
+- Ship put gold on map if dies
+- minipart of gold from killeld ships is visible for alive ships
+- Ship follows to busy gold by enemy
+- Ship follows to enemy if there is no gold
 
 In Progress:
 
 TODO:
-- Ship put gold on map if dies
-
-- Ship follows to busy gold by enemy
-- Ship follows to enemy if there is no gold
-- minipart of gold from killeld ships is visible for alive ships
+- ship rotates around with stable angle speed
+- gold size corresponds to amount
 - station is rotating
 - space is rotations
 - gold is animated

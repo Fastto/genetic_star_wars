@@ -9,6 +9,7 @@ public class ResourcesManager : MonoBehaviour
     [SerializeField] private GameObject goldPrefab;
     
     private List<GoldController> _goldList;
+    private List<ShipController> _shipList;
 
     public bool HasFree()
     {
@@ -19,11 +20,19 @@ public class ResourcesManager : MonoBehaviour
     {
         return GetCapturedByEnemy(requestorTeam).Count > 0;
     }
+    
+    public bool HasEnemies(Team requestorTeam)
+    {
+        return GetEnemies(requestorTeam).Count > 0;
+    }
 
 
     private void Start()
     {
+        _shipList = new List<ShipController>();
         _goldList = new List<GoldController>();
+        
+        
         var goldArr = FindObjectsOfType<GoldController>();
         foreach (var goldController in goldArr)
         {
@@ -40,6 +49,17 @@ public class ResourcesManager : MonoBehaviour
         };
 
         _goldList.Add(goldController);
+    }
+    
+    public void RegisterShip(ShipController shipController)
+    {
+        shipController.OnDie += controller =>
+        {
+            if (_shipList.Contains(controller))
+                _shipList.Remove(controller);
+        };
+
+        _shipList.Add(shipController);
     }
 
     public List<GoldController> GetFree()
@@ -75,5 +95,18 @@ public class ResourcesManager : MonoBehaviour
         goldController.SetInitialAmount(goldAmount);
         
         RegisterGold(goldController);
+    }
+    
+    public List<ShipController> GetEnemies(Team requestorTeam)
+    {
+        var list = new List<ShipController>();
+
+        _shipList.ForEach(item =>
+        {
+            if (item.Team != requestorTeam)
+                list.Add(item);
+        });
+
+        return list;
     }
 }

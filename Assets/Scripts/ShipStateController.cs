@@ -56,33 +56,34 @@ public class ShipStateController : MonoBehaviour
         
         if (_ship.IsConnectedToEnemy)
         {
-            state = battleState;
+            state = battleState; //done
         } 
         else if (_ship.Hold == 0 && _ship.IsConnectedToGold)
         {
-            state = miningState;
+            state = miningState; //done
         }
         else if (_ship.Hold > 0 && _ship.IsConnectedToStation)
         {
-            state = unloadingState;
+            state = unloadingState; //done
         }
         else if (_ship.Hold > 0 && !_ship.IsConnectedToStation)
         {
-            state = followToStationState;
+            state = followToStationState; //done
         }
         else if (_ship.Hold == 0
                  && _ship.Station.ResourcesManager.HasFree())
         {
-            state = followToFreeGoldState;
+            state = followToFreeGoldState; //done
         } 
         else if (_ship.Hold == 0
                  &&  _ship.Station.ResourcesManager.HasCapturedByEnemy(_ship.Team))
         {
-            state = followToBusyGoldState;
+            state = followToBusyGoldState; //done
         } 
-        else if (_ship.Hold == 0)
+        else if (_ship.Hold == 0
+                && _ship.Station.ResourcesManager.HasEnemies(_ship.Team))
         {
-            state = followToEnemyState;
+            state = followToEnemyState; //
         }
 
         return state;

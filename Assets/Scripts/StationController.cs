@@ -54,6 +54,8 @@ public class StationController : MonoBehaviour
       shipController.Genome = shipInitialGenome;
 
       shipController.OnDie += OnShipDieHandler;
+      
+      ResourcesManager.RegisterShip(shipController);
    }
 
    public void PutGold(int amount)

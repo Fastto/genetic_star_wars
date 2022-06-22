@@ -210,13 +210,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fab3120e73df48d1bf906881ceacd94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resourcesManager: {fileID: 0}
+  stationBodyRenderer: {fileID: 8737227630372935942}
+  ResourcesManager: {fileID: 0}
   team: {fileID: 0}
   shipPrefab: {fileID: 0}
   shipInitialGenome: {fileID: 0}
   initialGold: 20
   shipCost: 10
   shipBuildingTime: 5
+  idleRotationSpeed: 0.5
+  shipProduceRotationSpeed: 5
 --- !u!58 &3485405229678682092
 CircleCollider2D:
   m_ObjectHideFlags: 0

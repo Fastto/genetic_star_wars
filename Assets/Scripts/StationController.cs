@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class StationController : MonoBehaviour
 {
+   [SerializeField] private SpriteRenderer stationBodyRenderer;
+   
    [SerializeField] public ResourcesManager ResourcesManager;
    [SerializeField] private Team team;
 
@@ -15,19 +17,35 @@ public class StationController : MonoBehaviour
    [SerializeField] private int shipCost;
 
    [SerializeField] private float shipBuildingTime;
+
+   [SerializeField] private float idleRotationSpeed;
+   [SerializeField] private float shipProduceRotationSpeed;
+
+   private float _rotationSpeed;
    
    private int _gold;
    
    private void Start()
    {
+      stationBodyRenderer.color = team.color;
+      
+      _rotationSpeed = idleRotationSpeed;
+      
       _gold = initialGold;
       StartCoroutine(WaitForResourcesCoroutine());
    }
 
+   private void Update()
+   {
+      transform.Rotate(Vector3.forward, _rotationSpeed);
+   }
+
    private IEnumerator BuildTheShipCoroutine()
    {
+      _rotationSpeed = shipProduceRotationSpeed;
+      
       _gold -= shipCost;
-
+      
       yield return new WaitForSeconds(shipBuildingTime);
 
       BuildTheShip();
@@ -37,6 +55,7 @@ public class StationController : MonoBehaviour
    
    private IEnumerator WaitForResourcesCoroutine()
    {
+      _rotationSpeed = idleRotationSpeed;
       while (_gold < shipCost)
       {
          yield return null;

@@ -11,25 +11,28 @@ DONE:
 - Ship follows to busy gold by enemy
 - Ship follows to enemy if there is no gold
 - gold size corresponds to amount
-
-In Progress:
-
-
-TODO:
-- ship rotates around with stable angle speed
 - station is rotating
 - space is rotations
 - gold is animated
+
+In Progress:
+
+TODO:
+- ship rotates around with stable angle speed
+
+- station repair the ship? for gold
+
 - gun particles
 - ship engine particles
+
+- animation of mining
+- animation of unloading gold
+- animation of repairing
+
 - genome manages ship characteristics visual and as fact values
 - ship collects statistics of 
 -- total collected gold
 -- total damage
-- station repair the ship? for gold
-- animation of mining
-- animation of unloading gold
-- animation of repairing
 - Idle state - ??? ship flies to station or by random trajectory
 - gold showes amount, size of gold depends on amount
 - flag - unlimited gold

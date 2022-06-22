@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class SpaceController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private float rotationSpeed;
 
     // Update is called once per frame
     void Update()
     {
-        
+        transform.Rotate(Vector3.forward, rotationSpeed);
     }
 }

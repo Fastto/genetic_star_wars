@@ -2,12 +2,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class GoldController : MonoBehaviour
 {
     [SerializeField] private int initialAmount;
 
     private int _amount;
+
+    private float _rotationSpeed;
     
     public int Amount
     {
@@ -40,11 +43,14 @@ public class GoldController : MonoBehaviour
 
     private void Start()
     {
+        _rotationSpeed = Random.Range(-1f, 1f);
         Amount = initialAmount;
     }
 
     private void Update()
     {
+        transform.Rotate(Vector3.forward, _rotationSpeed);
+        
         if (Amount <= 0)
         {
             OnOver?.Invoke(this);

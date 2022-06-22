@@ -61,4 +61,9 @@ public class GoldController : MonoBehaviour
         _amount -= quantity;
         return quantity;
     }
+
+    public void SetInitialAmount(int amount)
+    {
+        initialAmount = amount;
+    }
 }

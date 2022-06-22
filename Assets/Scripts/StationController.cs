@@ -52,10 +52,21 @@ public class StationController : MonoBehaviour
       shipController.Station = this;
       shipController.Team = team;
       shipController.Genome = shipInitialGenome;
+
+      shipController.OnDie += OnShipDieHandler;
    }
 
    public void PutGold(int amount)
    {
       _gold += amount;
+   }
+
+   private void OnShipDieHandler(ShipController shipController)
+   {
+      var goldAmount = shipController.Hold;
+      if (goldAmount > 0)
+      {
+         ResourcesManager.DropGold(shipController.transform.position, goldAmount);
+      }
    }
 }

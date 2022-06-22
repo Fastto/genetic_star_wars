@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class ResourcesManager : MonoBehaviour
 {
+    [SerializeField] private GameObject goldPrefab;
+    
     private List<GoldController> _goldList;
 
     public bool HasFree()
@@ -64,5 +66,14 @@ public class ResourcesManager : MonoBehaviour
         });
 
         return list;
+    }
+
+    public void DropGold(Vector3 position, int goldAmount)
+    {
+        var goldGO = Instantiate(goldPrefab, position, Quaternion.identity);
+        var goldController = goldGO.GetComponent<GoldController>();
+        goldController.SetInitialAmount(goldAmount);
+        
+        RegisterGold(goldController);
     }
 }

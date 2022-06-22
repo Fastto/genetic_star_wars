@@ -5,12 +5,13 @@ DONE:
 - Ship follows to station if has gold on board
 - Ship Unloading
 - SHip attacks enemy
+- rotate to target in any state
 
 In Progress:
-- rotate to target in any state
 
 TODO:
 - Ship put gold on map if dies
+
 - Ship follows to busy gold by enemy
 - Ship follows to enemy if there is no gold
 - minipart of gold from killeld ships is visible for alive ships

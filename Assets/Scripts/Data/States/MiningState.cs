@@ -24,7 +24,7 @@ public class MiningState : State
 
     IEnumerator Mining()
     {
-        while (!IsFinished && _ship.Hold < _ship.Capacity)
+        while (!IsFinished && _ship.Hold < _ship.Capacity && !_gold.IsEmpty())
         {
             yield return new WaitForSeconds(_ship.MiningCoolDown);
             

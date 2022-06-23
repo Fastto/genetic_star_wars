@@ -6,6 +6,8 @@ using UnityEngine;
 public class StationController : MonoBehaviour
 {
    [SerializeField] private SpriteRenderer stationBodyRenderer;
+   [SerializeField] private ParticleSystem unloadingParticles;
+   
    
    [SerializeField] public ResourcesManager ResourcesManager;
    [SerializeField] private Team team;
@@ -80,6 +82,7 @@ public class StationController : MonoBehaviour
    public void PutGold(int amount)
    {
       _gold += amount;
+      unloadingParticles.Play();
    }
 
    private void OnShipDieHandler(ShipController shipController)

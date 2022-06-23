@@ -17,6 +17,7 @@ DONE:
 - gun particles
 - ship engine particles
 - animation of mining
+- animation of unloading gold
 
 In Progress:
 
@@ -28,7 +29,7 @@ TODO:
 
 - station repair the ship? for gold
 - animation of repairing
-- animation of unloading gold
+
 
 - genome manages ship characteristics visual and as fact values
 - ship collects statistics of 

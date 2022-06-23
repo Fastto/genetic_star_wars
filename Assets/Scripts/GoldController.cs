@@ -8,6 +8,7 @@ public class GoldController : MonoBehaviour
 {
     [SerializeField] private int initialAmount;
     [SerializeField] private ParticleSystem particleSystem;
+    [SerializeField] private GameObject sprite;
     
     private int _amount;
 
@@ -30,7 +31,7 @@ public class GoldController : MonoBehaviour
                 scale = scale > 1 ? 1 : scale;
                 scale = scale < 0.2f ? .2f : scale;
 
-                transform.localScale = new Vector3(scale, scale, 1);
+                sprite.transform.localScale = new Vector3(scale, scale, 1);
             }
         }
     }
@@ -97,5 +98,10 @@ public class GoldController : MonoBehaviour
     public void SetInitialAmount(int amount)
     {
         initialAmount = amount;
+    }
+
+    public bool IsEmpty()
+    {
+        return Amount == 0;
     }
 }

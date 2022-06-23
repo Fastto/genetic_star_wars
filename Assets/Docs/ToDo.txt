@@ -16,18 +16,19 @@ DONE:
 - gold is animated
 - gun particles
 - ship engine particles
+- animation of mining
 
 In Progress:
+
+
 
 
 TODO:
 - ship rotates around with stable angle speed
 
 - station repair the ship? for gold
-
-- animation of mining
-- animation of unloading gold
 - animation of repairing
+- animation of unloading gold
 
 - genome manages ship characteristics visual and as fact values
 - ship collects statistics of 

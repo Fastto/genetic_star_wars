@@ -7,7 +7,8 @@ using Random = UnityEngine.Random;
 public class GoldController : MonoBehaviour
 {
     [SerializeField] private int initialAmount;
-
+    [SerializeField] private ParticleSystem particleSystem;
+    
     private int _amount;
 
     private float _rotationSpeed;
@@ -84,6 +85,8 @@ public class GoldController : MonoBehaviour
 
     public int GetGold(int quantity)
     {
+        particleSystem.Play();
+        
         if (quantity > Amount)
             quantity = Amount;
 

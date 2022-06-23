@@ -27,6 +27,7 @@ public class BattleState : State
         while (!IsFinished && _ship.IsConnectedToEnemy)
         {
             yield return new WaitForSeconds(_ship.ShootCoolDown);
+            _ship.Fire();
             _enemy.MakeDamage(_ship.Damage);
         }
     }

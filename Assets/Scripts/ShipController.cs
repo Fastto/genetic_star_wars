@@ -8,10 +8,13 @@ public class ShipController : MonoBehaviour
 {
     [SerializeField] public Rigidbody2D rigidbody;
     [SerializeField] private SpriteRenderer shipBodySpriteRenderer;
+    [SerializeField] private ParticleSystem engineParticles;
+    [SerializeField] private ParticleSystem[] gunParticles;
     
     [HideInInspector] public StationController Station;
     [HideInInspector] public ShipGenome Genome;
     [HideInInspector] public Team Team;
+    
     
     //Genome managed properties
     public int Capacity;
@@ -43,6 +46,8 @@ public class ShipController : MonoBehaviour
     
     private void Start()
     {
+        DisableEngine();
+        
         SetColor(Team.color);
         ApplyGenome();
 
@@ -189,5 +194,31 @@ public class ShipController : MonoBehaviour
         //TODO: _ship.rigidbody.MoveRotation();
         transform.up = Vector3.Lerp(transform.up, direction, RotationSpeed);
     }
+
+    public void EnableEngine()
+    {
+        if(gameObject == null)
+            return;
+        
+        engineParticles.Play();
+    }
     
+    public void DisableEngine()
+    {
+        if(gameObject == null)
+            return;
+        
+        engineParticles.Stop();
+    }
+
+    public void Fire()
+    {
+        if(gameObject == null)
+            return;
+        
+        foreach (var gunParticle in gunParticles)
+        {
+            gunParticle.Play();
+        }
+    }
 }

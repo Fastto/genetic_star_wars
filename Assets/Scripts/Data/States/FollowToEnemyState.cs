@@ -28,6 +28,8 @@ public class FollowToEnemyState : State
 
             _target = target;
             _target.OnDie += OnEnemyDieHandler;
+            
+            _ship.EnableEngine();
         }
         else
         {
@@ -46,5 +48,13 @@ public class FollowToEnemyState : State
     {
         shipController.OnDie -= OnEnemyDieHandler;
         Finish();
+    }
+    
+    public override void Finish()
+    {
+        if(_ship != null)
+            _ship.DisableEngine();
+            
+        base.Finish();
     }
 }

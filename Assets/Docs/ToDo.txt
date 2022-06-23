@@ -14,16 +14,16 @@ DONE:
 - station is rotating
 - space is rotations
 - gold is animated
+- gun particles
+- ship engine particles
 
 In Progress:
+
 
 TODO:
 - ship rotates around with stable angle speed
 
 - station repair the ship? for gold
-
-- gun particles
-- ship engine particles
 
 - animation of mining
 - animation of unloading gold

@@ -12,6 +12,8 @@ public class FollowToStationState : State
         if (!_ship.IsConnectedToStation)
         {
             _target = _ship.Station;
+            
+            _ship.EnableEngine();
         }
         else
         {
@@ -29,5 +31,13 @@ public class FollowToStationState : State
     protected override bool ConditionToFinish()
     {
         return _ship.IsConnectedToStation;
+    }
+    
+    public override void Finish()
+    {
+        if(_ship != null)
+            _ship.DisableEngine();
+        
+        base.Finish();
     }
 }

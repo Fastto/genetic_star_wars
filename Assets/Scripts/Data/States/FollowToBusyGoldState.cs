@@ -29,6 +29,8 @@ public class FollowToBusyGoldState : State
             _target = target;
             _target.OnConnect += OnGoldConnectHandler;
             _target.OnOver += OnGoldConnectHandler;
+            
+            _ship.EnableEngine();
         }
         else
         {
@@ -48,5 +50,13 @@ public class FollowToBusyGoldState : State
         goldController.OnConnect -= OnGoldConnectHandler;
         goldController.OnOver -= OnGoldConnectHandler;
         Finish();
+    }
+    
+    public override void Finish()
+    {
+        if(_ship != null)
+            _ship.DisableEngine();
+        
+        base.Finish();
     }
 }

@@ -44,6 +44,9 @@ public class ShipController : MonoBehaviour
     public Action<ShipController> OnEnemyConnect;
     public Action<ShipController> OnEnemyDisconnect;
     public Action<ShipController> OnEnemyKill;
+
+    public Action<int> OnLivesChange;
+    public Action<int> OnHoldChange;
     
     private void Start()
     {
@@ -53,6 +56,9 @@ public class ShipController : MonoBehaviour
         ApplyGenome();
 
         Lives = Health;
+        
+        OnLivesChange?.Invoke(Lives);
+        OnHoldChange?.Invoke(Hold);
     }
 
     private void Update()
@@ -183,6 +189,7 @@ public class ShipController : MonoBehaviour
             damage = Lives;
 
         Lives -= damage;
+        OnLivesChange?.Invoke(Lives);
 
         bool isKilled = false;
         if (Lives == 0 && !_isKilled)

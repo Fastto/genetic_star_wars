@@ -34,6 +34,7 @@ public class MiningState : State
                 amount = _ship.Capacity - _ship.Hold;
             
             _ship.Hold += _gold.GetGold(amount);
+            _ship.OnHoldChange?.Invoke(_ship.Hold);
         }
         
         Finish();

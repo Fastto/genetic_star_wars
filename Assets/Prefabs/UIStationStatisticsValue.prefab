@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8165449670810432097}
   - component: {fileID: 2093731830250285971}
   m_Layer: 5
-  m_Name: StationStatisticsValue
+  m_Name: UIStationStatisticsValue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -1,39 +1,11 @@
-DONE:
-- Station produces the ship
-- Ship follows to free gold if is empty
-- Ship mining
-- Ship follows to station if has gold on board
-- Ship Unloading
-- SHip attacks enemy
-- rotate to target in any state
-- Ship put gold on map if dies
-- minipart of gold from killeld ships is visible for alive ships
-- Ship follows to busy gold by enemy
-- Ship follows to enemy if there is no gold
-- gold size corresponds to amount
-- station is rotating
-- space is rotations
-- gold is animated
-- gun particles
-- ship engine particles
-- animation of mining
-- animation of unloading gold
--  size of gold depends on amount
-
 In Progress:
+- ship shows HEALTHBAR: lives, fire cooldown, % of gold in holds
 
-- station shows statistics:
---- produced ships
---- alive ships
---- killed enemies
---- available gold
---- received gold
 
 
 
 TODO:
 - ship rotates around with stable angle speed
-
 - station repair the ship? for gold
 - animation of repairing
 - explode ship on die
@@ -43,10 +15,10 @@ TODO:
 - ship collects statistics of 
 -- total collected gold
 -- total damage
-- Idle state - ??? ship flies to station or by random trajectory
+
 - gold showes amount,
 - flag - unlimited gold
-- ship shows HEALTHBAR: lives, fire cooldown, % of gold in holds
+
 
 - station has strategy which genome to use for new ship
 - UI toolbox for genome statistics

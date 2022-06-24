@@ -43,6 +43,7 @@ public class ShipController : MonoBehaviour
     public Action<ShipController> OnDie;
     public Action<ShipController> OnEnemyConnect;
     public Action<ShipController> OnEnemyDisconnect;
+    public Action<ShipController> OnEnemyKill;
     
     private void Start()
     {
@@ -174,14 +175,23 @@ public class ShipController : MonoBehaviour
         DisconnectFromEnemy(shipController);
     }
 
-    public int MakeDamage(int damage)
+    private bool _isKilled = false;
+    
+    public bool MakeDamage(int damage)
     {
         if (damage > Lives)
             damage = Lives;
 
         Lives -= damage;
 
-        return damage;
+        bool isKilled = false;
+        if (Lives == 0 && !_isKilled)
+        {
+            _isKilled = true;
+            isKilled = true;
+        }
+
+        return isKilled;
     }
     
     public void Move(Vector3 direction)

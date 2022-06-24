@@ -56,7 +56,9 @@ public class ResourcesManager : MonoBehaviour
         shipController.OnDie += controller =>
         {
             if (_shipList.Contains(controller))
+            {
                 _shipList.Remove(controller);
+            }
         };
 
         _shipList.Add(shipController);

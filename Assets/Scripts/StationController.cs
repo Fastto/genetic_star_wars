@@ -82,6 +82,8 @@ public class StationController : MonoBehaviour
       shipController.Genome = shipInitialGenome;
 
       shipController.OnDie += OnShipDieHandler;
+
+      shipController.OnEnemyKill += controller => { OnEnemyDie?.Invoke(controller);}; 
       
       OnShipProduce?.Invoke(shipController);
       

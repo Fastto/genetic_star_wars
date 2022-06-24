@@ -10,7 +10,7 @@ public class StationController : MonoBehaviour
    
    
    [SerializeField] public ResourcesManager ResourcesManager;
-   [SerializeField] private Team team;
+   [SerializeField] public Team team;
 
    [SerializeField] private GameObject shipPrefab;
    [SerializeField] private ShipGenome shipInitialGenome;
@@ -26,6 +26,12 @@ public class StationController : MonoBehaviour
    private float _rotationSpeed;
    
    private int _gold;
+
+   public Action<int> OnGoldCollected;
+   public Action<int> OnGoldChange;
+   public Action<ShipController> OnShipProduce;
+   public Action<ShipController> OnShipDie;
+   public Action<ShipController> OnEnemyDie;
    
    private void Start()
    {
@@ -47,6 +53,7 @@ public class StationController : MonoBehaviour
       _rotationSpeed = shipProduceRotationSpeed;
       
       _gold -= shipCost;
+      OnGoldChange?.Invoke(_gold);
       
       yield return new WaitForSeconds(shipBuildingTime);
 
@@ -76,6 +83,8 @@ public class StationController : MonoBehaviour
 
       shipController.OnDie += OnShipDieHandler;
       
+      OnShipProduce?.Invoke(shipController);
+      
       ResourcesManager.RegisterShip(shipController);
    }
 
@@ -83,10 +92,15 @@ public class StationController : MonoBehaviour
    {
       _gold += amount;
       unloadingParticles.Play();
+      
+      OnGoldCollected?.Invoke(amount);
+      OnGoldChange?.Invoke(_gold);
    }
 
    private void OnShipDieHandler(ShipController shipController)
    {
+      OnShipDie?.Invoke(shipController);
+      
       var goldAmount = shipController.Hold;
       if (goldAmount > 0)
       {

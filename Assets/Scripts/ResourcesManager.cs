@@ -60,6 +60,7 @@ public class ResourcesManager : MonoBehaviour
         };
 
         _shipList.Add(shipController);
+        
     }
 
     public List<GoldController> GetFree()

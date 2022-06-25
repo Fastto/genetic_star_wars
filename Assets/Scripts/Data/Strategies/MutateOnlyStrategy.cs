@@ -14,6 +14,7 @@ public class MutateOnlyStrategy : Strategy
         var leaderBoard = GetLeaderBoard();
         var leaderBoardSize = leaderBoard.Count;
 
+        Debug.Log(leaderBoardSize);
         if (leaderBoardSize > 0)
         {
             bool genomeFound = false;

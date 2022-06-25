@@ -6,6 +6,7 @@ In Progress:
 
 
 TODO:
+- graph gpld / alive ships
 - ship rotates around with stable angle speed
 - station repair the ship? for gold
 - animation of repairing

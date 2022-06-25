@@ -22,7 +22,8 @@ public class StationController : MonoBehaviour
    [SerializeField] private float idleRotationSpeed;
    [SerializeField] private float shipProduceRotationSpeed;
 
-   [SerializeField] private Strategy strategy;
+   [SerializeField] public Strategy strategy;
+   private Strategy _strategy;
    
    private float _rotationSpeed;
    
@@ -42,6 +43,8 @@ public class StationController : MonoBehaviour
       
       _gold = initialGold;
       StartCoroutine(WaitForResourcesCoroutine());
+
+      _strategy = Instantiate(strategy);
    }
 
    private void Update()
@@ -80,13 +83,13 @@ public class StationController : MonoBehaviour
       ShipController shipController = shipGO.GetComponent<ShipController>();
       shipController.Station = this;
       shipController.Team = team;
-      shipController.Genome = strategy.GetGenome();
+      shipController.Genome = _strategy.GetGenome();
       shipController.OnDie += OnShipDieHandler;
       shipController.OnEnemyKill += controller => { OnEnemyDie?.Invoke(controller);}; 
       
       OnShipProduce?.Invoke(shipController);
       ResourcesManager.RegisterShip(shipController);
-      strategy.RegisterShip(shipController);
+      _strategy.RegisterShip(shipController);
    }
 
    public void PutGold(int amount)

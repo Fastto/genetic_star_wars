@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: New Random Strategy
   m_EditorClassIdentifier: 
   defaultGenome: {fileID: 11400000, guid: 9dc25b4247b7b49698280774a779ccd2, type: 2}
+  name: Random genome

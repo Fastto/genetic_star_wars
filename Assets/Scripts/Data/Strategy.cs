@@ -6,11 +6,18 @@ using UnityEngine;
 public abstract class Strategy : ScriptableObject
 {
     public static readonly int LeaderBoardSize = 10;
-    
-    [SerializeField] protected ShipGenome defaultGenome;
 
-    protected SortedList<int, ShipGenome> _leaderBoard = new SortedList<int, ShipGenome>();
-    protected List<ShipController> _ships = new List<ShipController>();
+    [SerializeField] protected ShipGenome defaultGenome;
+    [SerializeField] public string name;
+
+    protected SortedList<int, ShipGenome> _leaderBoard;
+    protected List<ShipController> _ships;
+
+    protected void OnEnable()
+    {
+        _leaderBoard = new SortedList<int, ShipGenome>();
+        _ships = new List<ShipController>();
+    }
 
     public virtual ShipGenome GetGenome()
     {
@@ -29,10 +36,10 @@ public abstract class Strategy : ScriptableObject
         {
             _ships.Remove(shipController);
         }
-        
+
         shipController.OnDie -= OnShipDie;
         int score = shipController.GetScore();
-        
+
         PutOnLeaderBoard(score, shipController.Genome);
     }
 
@@ -53,7 +60,7 @@ public abstract class Strategy : ScriptableObject
         {
             leaderBoard[keyValuePair.Key] = keyValuePair.Value;
         }
-        
+
         foreach (var shipController in _ships)
         {
             int score = shipController.GetScore();

@@ -33,6 +33,11 @@ public class ShipController : MonoBehaviour
     public float UnloadingCoolDown;
     public float RotationSpeed;
     public float Speed;
+
+    public int killedEnemies = 0;
+    public int collectedGold = 0;
+    public int unloadedGold = 0;
+    public int damaged = 0;
     
     //Other properties
     public int Hold;
@@ -276,5 +281,10 @@ public class ShipController : MonoBehaviour
         {
             gunParticle.Play();
         }
+    }
+
+    public int GetScore()
+    {
+        return killedEnemies + collectedGold + unloadedGold + damaged;
     }
 }

@@ -12,3 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d86c330fb94f4c5f8a498096f7ce6a3, type: 3}
   m_Name: New Mutate Only Strategy
   m_EditorClassIdentifier: 
+  defaultGenome: {fileID: 11400000, guid: 9dc25b4247b7b49698280774a779ccd2, type: 2}
+  initialProbability: 0.3
+  probabilityDownRate: 1

@@ -30,9 +30,12 @@ public class BattleState : State
            _ship.Fire();
            if( _enemy.MakeDamage(_ship.Damage))
            {
+               _ship.killedEnemies += 1;
                _ship.OnEnemyKill?.Invoke(_enemy);
            }
-           
+
+           _ship.damaged += _ship.Damage;
+
         }
     }
     

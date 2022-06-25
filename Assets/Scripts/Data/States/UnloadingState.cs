@@ -33,6 +33,8 @@ public class UnloadingState : State
                 amount = _ship.Hold;
             
             _ship.Hold -= amount;
+            _ship.unloadedGold += amount;
+            
             _ship.OnHoldChange?.Invoke(_ship.Hold);
             
             _station.PutGold(amount);

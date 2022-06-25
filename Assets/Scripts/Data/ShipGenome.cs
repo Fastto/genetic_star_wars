@@ -14,9 +14,15 @@ public class ShipGenome : ScriptableObject
    public static readonly int MinHealth = 4;
    public static readonly int MaxHealth = 80;
    
+   public static readonly float CargoGenMutateRate = .5f;
+   public static readonly float CargoGenMutateRange = .05f;
+   
+   public static readonly float DamageGenMutateRate = .5f;
+   public static readonly float DamageGenMutateRange = .1f;
+   
    [Range(0f, 1f)]
    public float cargoGen;
-   
+
    [Range(0f, 1f)]
    public float damageGen;
 
@@ -66,5 +72,24 @@ public class ShipGenome : ScriptableObject
       float warPoints = 1f - cargoGen;
       float healthPoints = 1f - damageGen;
       return healthPoints * warPoints;
+   }
+
+   public ShipGenome Mutate()
+   {
+      if (Random.value < CargoGenMutateRate)
+      {
+         cargoGen += Random.Range(-CargoGenMutateRange, CargoGenMutateRange);
+         cargoGen = cargoGen > 1f ? 1 : cargoGen;
+         cargoGen = cargoGen < 0f ? 0 : cargoGen;
+      }
+      
+      if (Random.value < DamageGenMutateRate)
+      {
+         damageGen += Random.Range(-DamageGenMutateRange, DamageGenMutateRange);
+         damageGen = damageGen > 1f ? 1 : damageGen;
+         damageGen = damageGen < 0f ? 0 : damageGen;
+      }
+      
+      return this;
    }
 }

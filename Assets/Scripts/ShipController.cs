@@ -107,13 +107,13 @@ public class ShipController : MonoBehaviour
         armorColor.a = Genome.GetHealthPoints();
         armor.color = armorColor;
 
-        var gunScale = .7f + Genome.GetDamagePoints() * 2;
+        var gunScale = .7f + Genome.GetDamagePoints() * 3;
         foreach (var gun in guns)
         {
             gun.transform.localScale = new Vector3(gunScale, gunScale, 1);
         }
         
-        var holdScale = .5f + Genome.GetCapacityPoints();
+        var holdScale = .5f + Genome.GetCapacityPoints() * 2;
         foreach (var hold in holds)
         {
             hold.transform.localScale = new Vector3(holdScale, holdScale, 1);

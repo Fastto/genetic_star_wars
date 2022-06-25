@@ -92,4 +92,12 @@ public class ShipGenome : ScriptableObject
       
       return this;
    }
+
+   public ShipGenome Cross(ShipGenome cross)
+   {
+      damageGen = Random.value > .5f ? cross.damageGen : damageGen;
+      cargoGen = Random.value > .5f ? cross.cargoGen : cargoGen;
+
+      return this;
+   }
 }

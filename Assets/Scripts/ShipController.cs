@@ -10,6 +10,10 @@ public class ShipController : MonoBehaviour
     [SerializeField] private SpriteRenderer shipBodySpriteRenderer;
     [SerializeField] private ParticleSystem engineParticles;
     [SerializeField] private ParticleSystem[] gunParticles;
+
+    [SerializeField] private GameObject[] guns;
+    [SerializeField] private GameObject[] holds;
+    [SerializeField] private SpriteRenderer armor;
     
     [HideInInspector] public StationController Station;
     [HideInInspector] public ShipGenome Genome;
@@ -77,9 +81,44 @@ public class ShipController : MonoBehaviour
 
     private void ApplyGenome()
     {
-        Capacity = 10;
-        Damage = 5;
-        Health = 20;
+        // Capacity 1 + 0..20
+        // Damage = 1 + 0..20
+        // Health = 4 + 0..80
+        
+        // G1 = 0 : Capacity = 1 + 0
+        // G1 = .5 : Capacity = 1 + 10
+        // G1 = 1 : Capacity = 1 + 20
+        
+        // G1 = 0, G2 = 0 : Damage = 1 + 0, Health = 4 + 80
+        // G1 = 0, G2 = 1 : Damage = 1 + 20, Health = 4 + 0
+        
+        // G1 = .5, G2 = 0 : Damage = 1 + 0, Health = 4 + 40
+        // G1 = .5, G2 = .5 : Damage = 1 + 5, Health = 4 + 20
+        // G1 = .5, G2 = 1 : Damage = 1 + 10, Health = 4 + 0
+        
+        // G1 = 1, G2 = 0 : Damage = 1 + 0, Health = 4 + 0
+        // G1 = 1, G2 = 1 : Damage = 1 + 0, Health = 4 + 0
+        
+        Capacity = Genome.GetCapacity();
+        Damage = Genome.GetDamage();
+        Health = Genome.GetHealth();
+
+        var armorColor = armor.color;
+        armorColor.a = Genome.GetHealthPoints();
+        armor.color = armorColor;
+
+        var gunScale = .7f + Genome.GetDamagePoints() * 2;
+        foreach (var gun in guns)
+        {
+            gun.transform.localScale = new Vector3(gunScale, gunScale, 1);
+        }
+        
+        var holdScale = .5f + Genome.GetCapacityPoints();
+        foreach (var hold in holds)
+        {
+            hold.transform.localScale = new Vector3(holdScale, holdScale, 1);
+        }
+        
     }
 
     private void ConnectToGold(GoldController goldController)

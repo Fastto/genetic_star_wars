@@ -13,7 +13,6 @@ public class StationController : MonoBehaviour
    [SerializeField] public Team team;
 
    [SerializeField] private GameObject shipPrefab;
-   [SerializeField] private ShipGenome shipInitialGenome;
 
    [SerializeField] private int initialGold;
    [SerializeField] private int shipCost;
@@ -23,6 +22,8 @@ public class StationController : MonoBehaviour
    [SerializeField] private float idleRotationSpeed;
    [SerializeField] private float shipProduceRotationSpeed;
 
+   [SerializeField] private Strategy strategy;
+   
    private float _rotationSpeed;
    
    private int _gold;
@@ -79,15 +80,13 @@ public class StationController : MonoBehaviour
       ShipController shipController = shipGO.GetComponent<ShipController>();
       shipController.Station = this;
       shipController.Team = team;
-      shipController.Genome = shipInitialGenome;
-
+      shipController.Genome = strategy.GetGenome();
       shipController.OnDie += OnShipDieHandler;
-
       shipController.OnEnemyKill += controller => { OnEnemyDie?.Invoke(controller);}; 
       
       OnShipProduce?.Invoke(shipController);
-      
       ResourcesManager.RegisterShip(shipController);
+      strategy.RegisterShip(shipController);
    }
 
    public void PutGold(int amount)

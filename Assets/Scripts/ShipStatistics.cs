@@ -50,7 +50,7 @@ public class ShipStatistics : MonoBehaviour
 
     private void Start()
     { 
-        // health.maxValue = ship.Health;
-        // hold.maxValue = ship.Capacity;
+        health.maxValue = ShipGenome.MaxHealth;
+        hold.maxValue = ShipGenome.MaxCapacity;
     }
 }

@@ -1,6 +1,7 @@
 In Progress:
-- ship shows HEALTHBAR: lives, fire cooldown, % of gold in holds
-
+- station has strategy which genome to use for new ship
+-- mutate str
+-- cross mutate strategy
 
 
 
@@ -9,9 +10,13 @@ TODO:
 - station repair the ship? for gold
 - animation of repairing
 - explode ship on die
+- web publish
+- restart game
+- configure game?
+- control speed
+- 3-rd team - Random strategy
+- cross random strategy
 
-
-- genome manages ship characteristics visual and as fact values
 - ship collects statistics of 
 -- total collected gold
 -- total damage
@@ -20,7 +25,7 @@ TODO:
 - flag - unlimited gold
 
 
-- station has strategy which genome to use for new ship
+
 - UI toolbox for genome statistics
 --- team stats
 --- genomes on the screen

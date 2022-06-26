@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6387d7c80d5554a00ab543d761a8377b, type: 3}
   m_Name: ShipDefaultGenome
   m_EditorClassIdentifier: 
-  cargoGen: 0.5
+  cargoGen: 0.33
   damageGen: 0.5

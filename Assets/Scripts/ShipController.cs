@@ -286,6 +286,6 @@ public class ShipController : MonoBehaviour
     public int GetScore()
     {
         //return killedEnemies + collectedGold + unloadedGold + damaged;
-        return killedEnemies * 20 + collectedGold + unloadedGold + damaged;
+        return killedEnemies * 50 + collectedGold + unloadedGold + damaged;
     }
 }

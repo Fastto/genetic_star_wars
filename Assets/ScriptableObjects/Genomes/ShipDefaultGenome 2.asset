@@ -9,11 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 929f8cf9cd7494beb88f95193c6c53af, type: 3}
-  m_Name: New Cross Random Strategy
+  m_Script: {fileID: 11500000, guid: 6387d7c80d5554a00ab543d761a8377b, type: 3}
+  m_Name: ShipDefaultGenome 2
   m_EditorClassIdentifier: 
-  defaultGenome: {fileID: 11400000, guid: 9dc25b4247b7b49698280774a779ccd2, type: 2}
-  name: Cross Random
-  initialProbability: 0.3
-  probabilityDownRate: 1
-  randomProbability: 0.3
+  cargoGen: 0.305
+  damageGen: 0.5

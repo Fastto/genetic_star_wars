@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 929f8cf9cd7494beb88f95193c6c53af, type: 3}
-  m_Name: New Cross Random Strategy
+  m_Script: {fileID: 11500000, guid: 14362d3d74b3f448e849d7f7acf2c3bd, type: 3}
+  m_Name: New Default Strategy 2
   m_EditorClassIdentifier: 
-  defaultGenome: {fileID: 11400000, guid: 9dc25b4247b7b49698280774a779ccd2, type: 2}
-  name: Cross Random
-  initialProbability: 0.3
-  probabilityDownRate: 1
-  randomProbability: 0.3
+  initialProbability: 0
+  probabilityDownRate: 0
+  defaultGenome: {fileID: 11400000, guid: 5437b771cb0764628bbcf063ebf39010, type: 2}
+  name: Static Genome 2

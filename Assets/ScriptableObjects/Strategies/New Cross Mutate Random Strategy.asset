@@ -16,4 +16,4 @@ MonoBehaviour:
   name: Mutate Cross Random
   initialProbability: 0.3
   probabilityDownRate: 1
-  randomProbability: 0.5
+  randomProbability: 0.3

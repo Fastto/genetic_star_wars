@@ -13,6 +13,7 @@ public class MiningState : State
         {
             _gold = _ship.ConnectedGold;
             _gold.OnDisconnect += OnGoldDisconnectHandler;
+            _gold.OnOver += OnGoldDisconnectHandler;
 
             _ship.StartCoroutine(Mining());
         }
@@ -52,6 +53,7 @@ public class MiningState : State
     private void OnGoldDisconnectHandler(GoldController goldController)
     {
         _gold.OnDisconnect -= OnGoldDisconnectHandler;
+        _gold.OnOver -= OnGoldDisconnectHandler;
         Finish();
     }
 }

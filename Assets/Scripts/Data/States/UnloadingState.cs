@@ -13,6 +13,11 @@ public class UnloadingState : State
         {
             _station = _ship.ConnectedStation;
 
+            if (_ship.Lives < _ship.Health)
+            {
+                _ship.Lives = _ship.Health;
+            }
+
             _ship.StartCoroutine(Unloading());
         }
         else

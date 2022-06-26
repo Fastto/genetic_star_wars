@@ -14,11 +14,11 @@ public class ShipGenome : ScriptableObject
    public static readonly int MinHealth = 4;
    public static readonly int MaxHealth = 80;
    
-   public static readonly float CargoGenMutateRate = .5f;
-   public static readonly float CargoGenMutateRange = .05f;
+   public static readonly float CargoGenMutateRate = .3f;
+   public static readonly float CargoGenMutateRange = .0125f;
    
-   public static readonly float DamageGenMutateRate = .5f;
-   public static readonly float DamageGenMutateRange = .1f;
+   public static readonly float DamageGenMutateRate = .3f;
+   public static readonly float DamageGenMutateRange = .025f;
    
    [Range(0f, 1f)]
    public float cargoGen;
@@ -95,8 +95,8 @@ public class ShipGenome : ScriptableObject
 
    public ShipGenome Cross(ShipGenome cross)
    {
-      damageGen = Random.value > .5f ? cross.damageGen : damageGen;
-      cargoGen = Random.value > .5f ? cross.cargoGen : cargoGen;
+      damageGen = Random.value < .5f ? cross.damageGen : damageGen;
+      cargoGen = Random.value < .5f ? cross.cargoGen : cargoGen;
 
       return this;
    }

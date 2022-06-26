@@ -617,6 +617,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 24c7ac825c04547e7a303428eebd7e7d, type: 2}
   - {fileID: 11400000, guid: ada62150858f5447584a525ec5eab4c9, type: 2}
   - {fileID: 11400000, guid: 18577eb92ad754ac5a7783db5a82348f, type: 2}
+  - {fileID: 11400000, guid: b64f0f56106b84fe389701c0f1542566, type: 2}
 --- !u!1 &343294804
 GameObject:
   m_ObjectHideFlags: 0
@@ -2952,6 +2953,8 @@ MonoBehaviour:
       m_Image: {fileID: 0}
     - m_Text: Cross Random
       m_Image: {fileID: 0}
+    - m_Text: Static Genome 2
+      m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -4777,6 +4780,8 @@ MonoBehaviour:
     - m_Text: Mutate Cross Random
       m_Image: {fileID: 0}
     - m_Text: Cross Random
+      m_Image: {fileID: 0}
+    - m_Text: Static Genome 2
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:

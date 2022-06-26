@@ -1,13 +1,12 @@
 In Progress:
-
+- control speed - X2 label
+- alive ships
 
 TODO:
-- graph gold / alive ships
 - explode ship on die
 - web publish
 - restart game
 - configure game - configure strategies and press play
-- control speed - X2 label
 - end game screen --- show stats, graph, winner
 
 

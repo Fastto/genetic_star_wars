@@ -8,7 +8,7 @@ public class IdleState : State
     [SerializeField] private float delay;
     protected override void Init()
     {
-        //_ship.StartCoroutine(Wait());
+        _ship.StartCoroutine(Wait());
         
         _ship.EnableEngine();
     }

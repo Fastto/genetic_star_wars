@@ -63,7 +63,7 @@ public class UIGraph : MonoBehaviour
                 _texture2D.Apply();
             }
             
-            yield return new WaitForSeconds(.5f);
+            yield return new WaitForSeconds(.75f);
         }
     }
 }

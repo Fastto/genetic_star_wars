@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea9388aca2b9f483fb0a1fb34e93ac80, type: 3}
   m_Name: IdleState
   m_EditorClassIdentifier: 
+  delay: 1

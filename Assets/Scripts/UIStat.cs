@@ -8,7 +8,7 @@ public class UIStat : MonoBehaviour
     [SerializeField] private GameObject stat;
     private void Start()
     {
-        stat.gameObject.SetActive(false);
+        //stat.gameObject.SetActive(false);
     }
 
     private void Update()

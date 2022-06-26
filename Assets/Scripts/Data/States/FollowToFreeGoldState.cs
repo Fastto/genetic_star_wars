@@ -28,6 +28,7 @@ public class FollowToFreeGoldState : State
 
             _target = target;
             _target.OnConnect += OnGoldConnectHandler;
+            _target.OnOver += OnGoldConnectHandler;
             
             _ship.EnableEngine();
         }
@@ -47,6 +48,7 @@ public class FollowToFreeGoldState : State
     protected void OnGoldConnectHandler(GoldController goldController)
     {
         goldController.OnConnect -= OnGoldConnectHandler;
+        goldController.OnOver -= OnGoldConnectHandler;
         Finish();
     }
     

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 193bca2f522864d4e98dee9a5e248841, type: 3}
   m_Name: BlueTeam
   m_EditorClassIdentifier: 
-  id: 1
+  id: 2
   color: {r: 0.19607843, g: 0.19607843, b: 1, a: 1}

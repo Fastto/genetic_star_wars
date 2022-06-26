@@ -13,6 +13,8 @@ public abstract class Strategy : ScriptableObject
     protected SortedList<int, ShipGenome> _leaderBoard;
     protected List<ShipController> _ships;
 
+    public Action<SortedList<int, ShipGenome>> OnLeaderBoardRefresh;
+
     protected void OnEnable()
     {
         _leaderBoard = new SortedList<int, ShipGenome>();
@@ -71,6 +73,8 @@ public abstract class Strategy : ScriptableObject
 
             leaderBoard[score] = shipController.Genome;
         }
+        
+        OnLeaderBoardRefresh?.Invoke(leaderBoard);
 
         return leaderBoard;
     }

@@ -1,32 +1,4 @@
 In Progress:
-- station has strategy which genome to use for new ship
--- mutate str
--- cross mutate strategy
-
-
-
-TODO:
-- graph gpld / alive ships
-- ship rotates around with stable angle speed
-- station repair the ship? for gold
-- animation of repairing
-- explode ship on die
-- web publish
-- restart game
-- configure game?
-- control speed
-- 3-rd team - Random strategy
-- cross random strategy
-
-- ship collects statistics of 
--- total collected gold
--- total damage
-
-- gold showes amount,
-- flag - unlimited gold
-
-
-
 - UI toolbox for genome statistics
 --- team stats
 --- genomes on the screen
@@ -36,14 +8,30 @@ TODO:
 ------ avg gold
 ------ avg scores
 ------ avg lifetime
-- genome stat = 20 x 20
+--- genome view = 3 color slider
 
-- at leas 1 point of damage
-- at leas 1 point of armor
-- at least 1 point of hold
+TODO:
+- graph gold / alive ships
+- explode ship on die
+- web publish
+- restart game
+- configure game - configure strategies and press play
+- control speed - X2 label
+- end game screen --- show stats, graph, winner
 
-genome value 
-0.05 - 0.95, step 0.05
+
+
+Backlog:
+- score function - part of strategy
+- flag - unlimited gold
+- ship rotates around with stable angle speed
+- bug with following to gold
+- station repair the ship? for gold
+- animation of repairing
+- 3-rd team 
+- cross random strategy
+- cross random mutate
+
 
 
 

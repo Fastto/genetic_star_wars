@@ -2467,7 +2467,7 @@ PrefabInstance:
     - target: {fileID: 2292839341015992031, guid: d29702461c8d147d4a50a863b3cca696, type: 3}
       propertyPath: strategy
       value: 
-      objectReference: {fileID: 11400000, guid: e5182c2c2935240c1a2622db6f1cf1ef, type: 2}
+      objectReference: {fileID: 11400000, guid: 24c7ac825c04547e7a303428eebd7e7d, type: 2}
     - target: {fileID: 2292839341015992031, guid: d29702461c8d147d4a50a863b3cca696, type: 3}
       propertyPath: shipPrefab
       value: 
@@ -4810,7 +4810,7 @@ PrefabInstance:
     - target: {fileID: 2292839341015992031, guid: d29702461c8d147d4a50a863b3cca696, type: 3}
       propertyPath: strategy
       value: 
-      objectReference: {fileID: 11400000, guid: 24c7ac825c04547e7a303428eebd7e7d, type: 2}
+      objectReference: {fileID: 11400000, guid: e5182c2c2935240c1a2622db6f1cf1ef, type: 2}
     - target: {fileID: 2292839341015992031, guid: d29702461c8d147d4a50a863b3cca696, type: 3}
       propertyPath: shipPrefab
       value: 

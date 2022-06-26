@@ -22,11 +22,11 @@ public class StationController : MonoBehaviour
     [SerializeField] private float idleRotationSpeed;
     [SerializeField] private float shipProduceRotationSpeed;
 
-    [SerializeField] public Strategy strategy;
-
     [SerializeField] private UIGenomeList strategyStat;
 
-    private Strategy _strategy;
+    [SerializeField] private UIGameControl gameControl;
+    
+    public Strategy _strategy { get; protected set; }
 
     private float _rotationSpeed;
 
@@ -47,7 +47,7 @@ public class StationController : MonoBehaviour
         _gold = initialGold;
         StartCoroutine(WaitForResourcesCoroutine());
 
-        _strategy = Instantiate(strategy);
+        _strategy = Instantiate(gameControl.GetStrategy(team));
         _strategy.OnLeaderBoardRefresh += list => { strategyStat.Refresh(list); };
     }
 

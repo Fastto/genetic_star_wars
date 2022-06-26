@@ -1,6 +1,4 @@
 In Progress:
-- restart game
-- configure game - configure strategies and press play
 
 TODO:
 - web publish

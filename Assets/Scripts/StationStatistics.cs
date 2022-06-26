@@ -75,7 +75,7 @@ public class StationStatistics : MonoBehaviour
     private void Start()
     {
         team.text = station.team.id.ToString();
-        strategy.text = station.strategy.name;
+        strategy.text = station._strategy.name;
     }
 
 

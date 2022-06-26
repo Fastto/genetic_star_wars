@@ -137,7 +137,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4696323062481211889, guid: a8d9ffc7a728f419eb21ae83cea3fdbe, type: 3}
       propertyPath: initialAmount
-      value: 400
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 5685194716154979581, guid: a8d9ffc7a728f419eb21ae83cea3fdbe, type: 3}
       propertyPath: m_RootOrder
@@ -608,8 +608,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   restartButton: {fileID: 290371291}
-  redStrategy: {fileID: 0}
-  blueStrategy: {fileID: 0}
+  redStrategy: {fileID: 1933218030}
+  blueStrategy: {fileID: 1130838085}
+  strategies:
+  - {fileID: 11400000, guid: 80e35a60d2210422881ef6c056456ec2, type: 2}
+  - {fileID: 11400000, guid: 672cfcd14ede14169bd5aafb9a4a90a0, type: 2}
+  - {fileID: 11400000, guid: e5182c2c2935240c1a2622db6f1cf1ef, type: 2}
+  - {fileID: 11400000, guid: 24c7ac825c04547e7a303428eebd7e7d, type: 2}
 --- !u!1 &343294804
 GameObject:
   m_ObjectHideFlags: 0
@@ -2790,11 +2795,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4696323062481211889, guid: a8d9ffc7a728f419eb21ae83cea3fdbe, type: 3}
       propertyPath: initialAmount
-      value: 400
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 5685194716154979581, guid: a8d9ffc7a728f419eb21ae83cea3fdbe, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5685194716154979581, guid: a8d9ffc7a728f419eb21ae83cea3fdbe, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5321,6 +5326,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7284093781840468641, guid: 56350737444af4fab9488733c0c40478, type: 3}
     - target: {fileID: 2292839341015992031, guid: d29702461c8d147d4a50a863b3cca696, type: 3}
+      propertyPath: gameControl
+      value: 
+      objectReference: {fileID: 294289300}
+    - target: {fileID: 2292839341015992031, guid: d29702461c8d147d4a50a863b3cca696, type: 3}
       propertyPath: strategyStat
       value: 
       objectReference: {fileID: 583789344}
@@ -5622,7 +5631,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4912463757274754734, guid: d29702461c8d147d4a50a863b3cca696, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4912463757274754734, guid: d29702461c8d147d4a50a863b3cca696, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6479,11 +6488,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4696323062481211889, guid: a8d9ffc7a728f419eb21ae83cea3fdbe, type: 3}
       propertyPath: initialAmount
-      value: 400
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 5685194716154979581, guid: a8d9ffc7a728f419eb21ae83cea3fdbe, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5685194716154979581, guid: a8d9ffc7a728f419eb21ae83cea3fdbe, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7924,6 +7933,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7284093781840468641, guid: 56350737444af4fab9488733c0c40478, type: 3}
     - target: {fileID: 2292839341015992031, guid: d29702461c8d147d4a50a863b3cca696, type: 3}
+      propertyPath: gameControl
+      value: 
+      objectReference: {fileID: 294289300}
+    - target: {fileID: 2292839341015992031, guid: d29702461c8d147d4a50a863b3cca696, type: 3}
       propertyPath: strategyStat
       value: 
       objectReference: {fileID: 3369407453041362043}
@@ -8225,7 +8238,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4912463757274754734, guid: d29702461c8d147d4a50a863b3cca696, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4912463757274754734, guid: d29702461c8d147d4a50a863b3cca696, type: 3}
       propertyPath: m_LocalPosition.x

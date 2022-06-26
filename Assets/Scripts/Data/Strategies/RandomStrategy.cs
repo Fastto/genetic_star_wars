@@ -7,6 +7,7 @@ public class RandomStrategy : Strategy
 {
     public override ShipGenome GetGenome()
     {
+        GetLeaderBoard();
         return ShipGenome.GetRandom();
     }
 }

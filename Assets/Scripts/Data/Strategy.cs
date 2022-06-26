@@ -23,6 +23,7 @@ public abstract class Strategy : ScriptableObject
 
     public virtual ShipGenome GetGenome()
     {
+        GetLeaderBoard();
         return Instantiate(defaultGenome);
     }
 

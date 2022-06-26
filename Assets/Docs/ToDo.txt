@@ -1,14 +1,5 @@
 In Progress:
-- UI toolbox for genome statistics
---- team stats
---- genomes on the screen
---- top 10 genomes as unactive sliders and its results
------- quantity of ships
------- avg damage
------- avg gold
------- avg scores
------- avg lifetime
---- genome view = 3 color slider
+
 
 TODO:
 - graph gold / alive ships

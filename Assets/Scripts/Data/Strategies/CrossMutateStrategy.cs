@@ -44,6 +44,8 @@ public class CrossMutateStrategy : Strategy
                     genome = Instantiate(leaderBoard.Values[Random.Range(minId, maxId)]);
                 }
             }
+            
+            Debug.Log("Selected: " + id);
 
             ShipGenome crossGenome = leaderBoard.Values[Random.Range(minId, maxId)];
             genome.Cross(crossGenome);

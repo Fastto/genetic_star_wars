@@ -615,6 +615,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 672cfcd14ede14169bd5aafb9a4a90a0, type: 2}
   - {fileID: 11400000, guid: e5182c2c2935240c1a2622db6f1cf1ef, type: 2}
   - {fileID: 11400000, guid: 24c7ac825c04547e7a303428eebd7e7d, type: 2}
+  - {fileID: 11400000, guid: ada62150858f5447584a525ec5eab4c9, type: 2}
+  - {fileID: 11400000, guid: 18577eb92ad754ac5a7783db5a82348f, type: 2}
 --- !u!1 &343294804
 GameObject:
   m_ObjectHideFlags: 0
@@ -2946,6 +2948,10 @@ MonoBehaviour:
       m_Image: {fileID: 0}
     - m_Text: Mutate & Cross
       m_Image: {fileID: 0}
+    - m_Text: Mutate Cross Random
+      m_Image: {fileID: 0}
+    - m_Text: Cross Random
+      m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -4362,7 +4368,7 @@ MonoBehaviour:
   m_fontSize: 24
   m_fontSizeBase: 24
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -4767,6 +4773,10 @@ MonoBehaviour:
     - m_Text: Mutation
       m_Image: {fileID: 0}
     - m_Text: Mutate & Cross
+      m_Image: {fileID: 0}
+    - m_Text: Mutate Cross Random
+      m_Image: {fileID: 0}
+    - m_Text: Cross Random
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -6306,10 +6316,10 @@ MonoBehaviour:
   m_fontSize: 24
   m_fontSizeBase: 24
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 64
+  m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535

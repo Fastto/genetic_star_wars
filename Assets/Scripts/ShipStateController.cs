@@ -45,7 +45,7 @@ public class ShipStateController : MonoBehaviour
 
     private void SetState(State state)
     {
-        Debug.Log("State: " + state.GetType().ToString());
+        //Debug.Log("State: " + state.GetType().ToString());
         _state = Instantiate(state);
         _state.Init(_ship);
     }

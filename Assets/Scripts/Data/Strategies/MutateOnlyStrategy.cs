@@ -43,6 +43,8 @@ public class MutateOnlyStrategy : Strategy
                     genome = Instantiate(leaderBoard.Values[Random.Range(minId, maxId)]);
                 }
             }
+            
+            Debug.Log("Selected: " + id);
         }
 
         return genome.Mutate();

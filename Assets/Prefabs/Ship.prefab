@@ -420,7 +420,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 24
-  m_Sprite: {fileID: 21300000, guid: 80d3166a5ee95476295e6c00fc3109a6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b57d7e25838564c0581369dd4661619c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5398,6 +5398,10 @@ MonoBehaviour:
   UnloadingCoolDown: 0.25
   RotationSpeed: 0.25
   Speed: 1
+  killedEnemies: 0
+  collectedGold: 0
+  unloadedGold: 0
+  damaged: 0
   Hold: 0
   Lives: 0
 --- !u!50 &5242310617335930360

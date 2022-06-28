@@ -26,13 +26,16 @@ public class ResourcesManager : MonoBehaviour
         return GetEnemies(requestorTeam).Count > 0;
     }
 
-
-    private void Start()
+    private void Awake()
     {
         _shipList = new List<ShipController>();
         _goldList = new List<GoldController>();
-        
-        
+    }
+
+
+    private void Start()
+    {
+
         var goldArr = FindObjectsOfType<GoldController>();
         foreach (var goldController in goldArr)
         {
@@ -107,6 +110,18 @@ public class ResourcesManager : MonoBehaviour
         _shipList.ForEach(item =>
         {
             if (item.Team != requestorTeam)
+                list.Add(item);
+        });
+
+        return list;
+    }
+    
+    public List<ShipController> GetTeammates(Team requestorTeam)
+    {
+        var list = new List<ShipController>();
+        _shipList.ForEach(item =>
+        {
+            if (item.Team == requestorTeam)
                 list.Add(item);
         });
 

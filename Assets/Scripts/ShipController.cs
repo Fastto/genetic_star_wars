@@ -84,7 +84,7 @@ public class ShipController : MonoBehaviour
         shipBodySpriteRenderer.color = color;
     }
 
-    private void ApplyGenome()
+    public void ApplyGenome()
     {
         // Capacity 1 + 0..20
         // Damage = 1 + 0..20
@@ -281,6 +281,22 @@ public class ShipController : MonoBehaviour
         {
             gunParticle.Play();
         }
+    }
+    
+    public void LeftFire()
+    {
+        if(gameObject == null)
+            return;
+        
+        gunParticles[0].Play();
+    }
+    
+    public void RightFire()
+    {
+        if(gameObject == null)
+            return;
+        
+        gunParticles[1].Play();
     }
 
     public int GetScore()

@@ -60,7 +60,7 @@ public class StationController : MonoBehaviour
     {
         _rotationSpeed = shipProduceRotationSpeed;
 
-        _gold -= shipCost;
+        _gold -= (shipCost + ResourcesManager.GetTeammates(team).Count);
         OnGoldChange?.Invoke(_gold);
 
         yield return new WaitForSeconds(shipBuildingTime);
@@ -73,7 +73,7 @@ public class StationController : MonoBehaviour
     private IEnumerator WaitForResourcesCoroutine()
     {
         _rotationSpeed = idleRotationSpeed;
-        while (_gold < shipCost)
+        while (_gold < shipCost + ResourcesManager.GetTeammates(team).Count)
         {
             yield return null;
         }

@@ -15,10 +15,10 @@ public class ShipGenome : ScriptableObject
    public static readonly int MaxHealth = 80;
    
    public static readonly float CargoGenMutateRate = .3f;
-   public static readonly float CargoGenMutateRange = .0125f;
+   public static readonly float CargoGenMutateRange = .05f;
    
    public static readonly float DamageGenMutateRate = .3f;
-   public static readonly float DamageGenMutateRange = .025f;
+   public static readonly float DamageGenMutateRange = .1f;
    
    [Range(0f, 1f)]
    public float cargoGen;

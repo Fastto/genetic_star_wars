@@ -47,8 +47,13 @@ public class StationController : MonoBehaviour
         _gold = initialGold;
         StartCoroutine(WaitForResourcesCoroutine());
 
-        _strategy = Instantiate(gameControl.GetStrategy(team));
         _strategy.OnLeaderBoardRefresh += list => { strategyStat.Refresh(list); };
+    }
+
+    private void OnEnable()
+    {
+        if(_strategy == null)
+            _strategy = Instantiate(gameControl.GetStrategy(team));
     }
 
     private void Update()

@@ -76,6 +76,20 @@ public class StationStatistics : MonoBehaviour
     {
         team.text = station.team.id.ToString();
         strategy.text = station._strategy.name;
+        
+        station._strategy.OnLeaderBoardRefresh += OnLeaderBoardRefreshHandler;
+    }
+
+    void OnLeaderBoardRefreshHandler(SortedList<int, ShipGenome> list)
+    {
+        var keys = list.Keys;
+        int scoreI = 0;
+        foreach (var key in keys)
+        {
+            scoreI += key;
+        }
+
+        score.text = scoreI.ToString();
     }
 
 

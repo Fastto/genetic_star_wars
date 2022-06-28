@@ -65,6 +65,16 @@ public class UIGameControl : MonoBehaviour
 
     public Strategy GetStrategy(Team team)
     {
+        if (RedStrategy == null)
+        {
+            RedStrategy = strategies[0];
+        }
+        
+        if (BlueStrategy == null)
+        {
+            BlueStrategy = strategies[0];
+        }
+        
         if (team.id == 1)
         {
             return RedStrategy;

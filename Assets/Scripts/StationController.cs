@@ -40,6 +40,9 @@ public class StationController : MonoBehaviour
 
     private void Start()
     {
+        //if(_strategy == null)
+            _strategy = Instantiate(gameControl.GetStrategy(team));
+        
         stationBodyRenderer.color = team.color;
 
         _rotationSpeed = idleRotationSpeed;
@@ -48,12 +51,6 @@ public class StationController : MonoBehaviour
         StartCoroutine(WaitForResourcesCoroutine());
 
         _strategy.OnLeaderBoardRefresh += list => { strategyStat.Refresh(list); };
-    }
-
-    private void OnEnable()
-    {
-        if(_strategy == null)
-            _strategy = Instantiate(gameControl.GetStrategy(team));
     }
 
     private void Update()

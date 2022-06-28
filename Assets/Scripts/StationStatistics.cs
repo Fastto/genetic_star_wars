@@ -74,9 +74,14 @@ public class StationStatistics : MonoBehaviour
 
     private void Start()
     {
+        StartCoroutine(OnFirstFrame());
+    }
+
+    IEnumerator OnFirstFrame()
+    {
+        yield return null;
         team.text = station.team.id.ToString();
         strategy.text = station._strategy.name;
-        
         station._strategy.OnLeaderBoardRefresh += OnLeaderBoardRefreshHandler;
     }
 
